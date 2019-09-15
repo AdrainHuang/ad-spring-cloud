@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: ad-eureka-client
+  cloud:
+    zookeeper:
+      enabled: false
+    consul:
+      discovery:
+        enabled: false
+
+server:
+  port: 8084
+
+eureka:
+  client:
+    enabled: false
+
+--- # Eureka 的注册中心
+spring:
+  profiles: eureka
+
+#客户端配置
+eureka:
+  server:
+    host: 127.0.0.1
+    port: 12345
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.server.host}:${eureka.server.port}/eureka/
+  instance:
+    instanceId: ${spring.application.name}:${server.port}
+
+
+--- # 参考 org.springframework.cloud.zookeeper.ZookeeperProperties
+spring:
+  profiles: zookeeper
+  cloud:
+    zookeeper:
+      connectString: 127.0.0.1:2181
+      discovery:
+        enabled: true
+
+--- # consul
+spring:
+  profiles: consul
+  cloud:
+    consul:
+      discovery:
+        enabled: true
+        ipAddress: 127.0.0.1
+        port: 8500
