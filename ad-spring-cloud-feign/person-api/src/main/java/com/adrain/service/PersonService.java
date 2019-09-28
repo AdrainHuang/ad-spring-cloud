@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.Collection;
 
 //实现接口类的spring.application.name
-@FeignClient(value = "person-service",fallback = PersonServiceFallBack.class)
+@FeignClient(value = "person-service", fallback = PersonServiceFallBack.class)
 public interface PersonService {
 	
 	@PostMapping(value = "/person/save")

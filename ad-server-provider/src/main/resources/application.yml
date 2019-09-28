@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: provider2
+
+
+
+---
+spring:
+  profiles: provider1
+  application:
+    name: ad-server-provider1
+
+server:
+  port: 8081
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:6061/eureka/
+
+---
+spring:
+  profiles: provider2
+  application:
+    name: ad-server-provider2
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:6061/eureka/

@@ -18,20 +18,20 @@ public class HystrixController {
 	
 	@GetMapping("helloworld")
 	@HystrixCommand(fallbackMethod = "erroContent",
-		commandProperties = { @HystrixProperty(
-			name = "execution.isolation.thread.timeoutInMilliseconds",
-			value = "100"
-		
-		)}
+	commandProperties = {@HystrixProperty(
+	name = "execution.isolation.thread.timeoutInMilliseconds",
+	value = "100"
+
+	)}
 	)
 	public String hellworld() throws InterruptedException {
 		int i = random.nextInt(200);
-		System.out.println("helloword() cost"+i +".ms");
+		System.out.println("helloword() cost" + i + ".ms");
 		Thread.sleep(i);
 		return "hello word";
 	}
 	
-	public String erroContent(){
+	public String erroContent() {
 		return "error timeout";
 	}
 }

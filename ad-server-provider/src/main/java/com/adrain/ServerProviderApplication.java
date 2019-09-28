@@ -1,4 +1,4 @@
-package com.adrain.spring.cloud.feign.person.service.prodvider;
+package com.adrain;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,13 +6,14 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @Author AdrainHuang
- * @Date 2019/3/15 上午11:17
+ * @Date 2019/9/28 12:21
  **/
 @SpringBootApplication
 @EnableDiscoveryClient
-public class PersonServiceProviderApplication {
+public class ServerProviderApplication {
+
 
 	public static void main(String[] args) {
-		SpringApplication.run(PersonServiceProviderApplication.class, args);
+		SpringApplication.run(ServerProviderApplication.class, args);
 	}
 }

@@ -1,14 +1,29 @@
 spring:
-  application:
-    name: ad-eureka-server
+  profiles:
+    active: eureka1
 
-server:
-  port: 12345
 
 #客户端配置
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:${server.port}/eureka/
+      defaultZone: http://127.0.0.1:6061/eureka/,http://127.0.0.1:6062/eureka/
+
+---
+spring:
+  profiles: eureka1
+  application:
+    name: ad-eureka-server1
+
+server:
+  port: 6061
 
 
+---
+spring:
+  profiles: eureka2
+  application:
+    name: ad-eureka-server2
+
+server:
+  port: 6062

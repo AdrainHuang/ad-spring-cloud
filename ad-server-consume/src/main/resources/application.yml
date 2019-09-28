@@ -1,0 +1,32 @@
+spring:
+  profiles:
+    active: consume2
+
+
+
+---
+spring:
+  profiles: consume1
+  application:
+    name: ad-consume1
+server:
+  port: 7071
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:6061/eureka/
+
+---
+spring:
+  profiles: consume2
+  application:
+    name: ad-consume2
+
+server:
+  port: 7072
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:6062/eureka/

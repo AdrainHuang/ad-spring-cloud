@@ -13,3 +13,10 @@ ad-spring-cloud-server作为配置中心，zuul作为网关，但发现zuul读�
 `person-client端口：8888`
 服务调用链：zuul(7070)->person-client(8888)->person-service(9090)
 访问地址：http://localhost:7070/person-client/person/find/all
+
+###Eureka高可用演示 查看以下三个模块
+```xml
+ <module>ad-eureka-server</module>
+ <module>ad-server-provider</module>
+ <module>ad-server-consume</module>
+```

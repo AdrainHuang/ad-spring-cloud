@@ -12,8 +12,8 @@ public class EurekaServerBoostrap {
 	
 	@EnableAutoConfiguration
 	@EnableEurekaServer
-	public static class EurekaServerConfiguration{
-	
+	public static class EurekaServerConfiguration {
+
 	}
 	
 	public static void main(String[] args) {

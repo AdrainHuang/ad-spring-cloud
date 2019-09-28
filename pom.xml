@@ -20,6 +20,10 @@
         <module>ad-spring-cloud-zuul</module>
         <module>ad-eureka-server</module>
         <module>ad-config-registry-client</module>
+        <module>ad-eureka-server</module>
+        <module>ad-server-provider</module>
+        <module>ad-server-consume</module>
+
     </modules>
 
     <parent>
