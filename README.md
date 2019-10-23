@@ -20,3 +20,14 @@ ad-spring-cloud-server作为配置中心，zuul作为网关，但发现zuul读�
  <module>ad-server-provider</module>
  <module>ad-server-consume</module>
 ```
+
+
+### spring cloud contract demo
+```xml
+<module>ad-spring-cloud-contract-consumer</module>
+<module>ad-spring-cloud-contract-producer</module>
+
+```
+测试顺序： 
+1. 先将producer 打包，然后留意观察日志。
+2. 测试consumer内的test case
